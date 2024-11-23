@@ -1,0 +1,38 @@
+<section
+    class="banner-content"
+    x-data="{
+        isMobile: window.innerWidth < 1024,
+        startQuestionnaire(lbs) {
+            sessionStorage.setItem('selectedLbs', lbs); // Save the selected weight loss goal
+            location.href = '/question/1/'; // Redirect to the first question page
+        }
+    }"
+    @resize.window="isMobile = window.innerWidth < 1024"
+>
+    <div class="text-content">
+        <h1>Uncover weight loss methods for all menopause stages</h1>
+        <h2>What is your desired weight loss goal?</h2>
+        <div class="buttons-container">
+            <button @click="startQuestionnaire('0-11 lbs')">Lose 0-11 lbs</button>
+            <button @click="startQuestionnaire('12-22 lbs')">Lose 12-22 lbs</button>
+            <button @click="startQuestionnaire('23-44 lbs')">Lose 23-44 lbs</button>
+            <button @click="startQuestionnaire('45-88 lbs')">Lose 45-88 lbs</button>
+            <button class="full-width" @click="startQuestionnaire('88+ lbs')">Lose 88+ lbs</button>
+        </div>
+    </div>
+    <div class="image-content">
+        <!-- Background image dynamically updated based on isMobile -->
+        <img :src="isMobile ? '/assets/images/banner-image-bg-mobile.png' : '/assets/images/banner-image-bg.png'"
+             alt="Circle with stripes"
+             class="banner-image-background"
+             x-cloak
+        >
+
+        <!-- Main banner image dynamically updated based on isMobile -->
+        <img :src="isMobile ? '/assets/images/main-banner-image-mobile.png' : '/assets/images/main-banner-image.png'"
+             alt="Smiling Woman"
+             class="banner-image"
+             x-cloak
+        >
+    </div>
+</section>

@@ -1,0 +1,18 @@
+button {
+    padding: 16px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--secondary-green-color);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--primary-black-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(129, 129, 70, 0.16);
+}
+
+button:hover {
+    background-color: #a4c2ad;
+}
