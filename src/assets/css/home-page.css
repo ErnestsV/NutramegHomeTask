@@ -1,0 +1,109 @@
+.banner-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image-background {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    max-width: 708px;
+    height: 478px;
+}
+
+.text-content {
+    max-width: 524px;
+    text-align: left;
+    padding-right: 28px;
+    padding-left: 28px;
+    z-index: 10;
+}
+
+.text-content h1 {
+    margin: 20px 0 48px;
+}
+
+.image-content {
+    position: relative;
+    align-self: end;
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    min-height: 400px;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    width: 114px;
+    height: auto;
+}
+
+.disclaimer-section {
+    text-align: left;
+    padding: 48px 28px;
+    background-color: var(--primary-white-color);
+    font-size: 14px;
+}
+
+.disclaimer-section p:first-child {
+    margin: 0 0 20px;
+}
+
+.disclaimer-section p:nth-child(2) {
+    margin: 0;
+}
+
+.buttons-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-right: auto;
+}
+
+.buttons-container .full-width {
+    grid-column: span 2;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .banner-content {
+        padding-right: 0;
+        flex-direction: row;
+        align-items: end;
+    }
+
+    .banner-image {
+        margin-right: 126px;
+    }
+
+    .banner-content .text-content {
+        margin: 0 0 120px 150px;
+        padding: 0;
+    }
+
+    .banner-image-background {
+        height:auto;
+    }
+
+    .disclaimer-section {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+}

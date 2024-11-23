@@ -1,0 +1,56 @@
+@import url('./assets/css/typography.css');
+@import url('./assets/css/footer.css');
+@import url('./assets/css/header.css');
+@import url('./assets/css/button.css');
+@import url('./assets/css/home-page.css');
+@import url('./assets/css/questions.css');
+
+[x-cloak] {
+    display: none !important;
+}
+
+:root {
+    --primary-green-color: #E2E8E5;
+    --secondary-green-color: #BAD5C8;
+    --primary-black-color: #444134;
+    --secondary-black-color: #404040;
+    --primary-white-color: #F8F6F1;
+    --primary-brown-color: #DBCDB3;
+    --primary-beige-color: #E5BF94;
+    --secondary-beige-color: #F6F4F3;
+    --footer-background-color: #EDEAE2;
+    --light-gray-color: #D4D4D4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--primary-green-color);
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-green-color);
+    z-index: 100;
+}
+
+header,
+footer {
+    padding-right: 28px;
+    padding-left: 28px;
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+    header,
+    footer {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+}

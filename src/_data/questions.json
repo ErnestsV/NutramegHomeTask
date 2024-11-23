@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "title": "Why do you want to lose weight?",
+        "checkboxes": [
+            "Improve how I look",
+            "Become healthier",
+            "Feel better",
+            "Boost my energy",
+            "Other"
+        ],
+        "next": 2,
+        "progress": 50
+    },
+    {
+        "id": 2,
+        "title": "How quickly do you think it would take to lose [lbs]?",
+        "checkboxes": [
+            "1 month",
+            "3 months",
+            "6 months",
+            "1 year",
+            "2 years"
+        ],
+        "next": null,
+        "progress": 100
+    }
+]

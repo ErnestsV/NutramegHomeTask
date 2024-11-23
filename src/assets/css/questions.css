@@ -1,0 +1,116 @@
+.questions-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.questions-page-logo {
+    display: block;
+    height: 56px;
+}
+
+.questions-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 358px;
+    margin: 40px auto 24px auto;
+}
+
+.questions-page-content .back-arrow {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.questions-main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.questions-main-wrapper h2 {
+    font-family: "Young Serif", serif;
+    margin: 0;
+    text-align: center;
+}
+
+.progress-bar {
+    height: 12px;
+    background-color: var(--secondary-beige-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: var(--primary-beige-color);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: 508px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var( --light-gray-color);
+    border-radius: 8px;
+    padding: 18px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-container label:hover {
+    background-color: var(--primary-beige-color);
+    border-color: var(--primary-beige-color);
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-white-color);
+    border: 1px solid var(--primary-brown-color);
+    border-radius: 4px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    position: relative;
+    background-color: var(--primary-brown-color);
+    color: white;
+    background-image: url('/assets/icons/check-mark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+
+.questions-page-button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .questions-page-logo {
+        display: block;
+        height: 56px;
+        width: fit-content;
+        position: absolute;
+        top: 24px;
+        left: 150px;
+    }
+}

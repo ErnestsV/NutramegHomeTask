@@ -1,0 +1,60 @@
+---
+pagination:
+    data: questions
+    size: 1
+    alias: question
+permalink: "question/{{ question.id }}/index.html"
+layout: 'base.njk'
+---
+
+<section x-data="questionPage('{{ question.next }}', {{ question.id }})">
+    <div class="questions-page-content">
+        <div class="questions-page-header">
+            <img src="/assets/icons/back-arrow.svg" alt="Back" class="back-arrow" @click="goBack()">
+            <a class="questions-page-logo" href="/">
+                <img src="/assets/images/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="questions-main-wrapper">
+            <div class="progress-bar">
+                <div class="progress" :style="'width: {{ question.progress }}%'"></div>
+            </div>
+            <h2 x-text="questionTitle"></h2>
+            <div class="checkbox-container">
+                {% for checkbox in question.checkboxes %}
+                <label>
+                    <input type="checkbox" value="{{ checkbox }}" x-model="answers" />
+                    {{ checkbox }}
+                </label>
+                {% endfor %}
+            </div>
+            <button class="questions-page-button" @click="nextPage()" x-text="nextId ? 'Next' : 'I am ready'"></button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function questionPage(nextId, currentId) {
+        const lbs = sessionStorage.getItem('selectedLbs') || '';
+
+        return {
+            nextId,
+            questionTitle: '{{ question.title }}'.replace('[lbs]', lbs),
+
+            answers: JSON.parse(sessionStorage.getItem(`question${currentId}Answers`)) || [],
+            nextPage() {
+                sessionStorage.setItem(`question${currentId}Answers`, JSON.stringify(this.answers)); // Save answers
+
+                if (nextId) {
+                    location.href = `/question/${nextId}/`; // Redirect to the next question page
+                } else {
+                    alert("Thank you for completing the questionnaire! Let's start your journey! :)");
+                    location.href = '/';
+                }
+            },
+            goBack() {
+                history.back();
+            },
+        };
+    }
+</script>
