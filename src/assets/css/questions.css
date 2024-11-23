@@ -1,3 +1,7 @@
+.questions-page {
+    padding: 0 28px;
+}
+
 .questions-page-header {
     display: flex;
     justify-content: space-between;
