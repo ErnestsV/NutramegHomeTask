@@ -7,7 +7,7 @@ permalink: "question/{{ question.id }}/index.html"
 layout: 'base.njk'
 ---
 
-<section x-data="questionPage('{{ question.next }}', {{ question.id }})">
+<section class="questions-page" x-data="questionPage('{{ question.next }}', {{ question.id }})">
     <div class="questions-page-content">
         <div class="questions-page-header">
             <img src="/assets/icons/back-arrow.svg" alt="Back" class="back-arrow" @click="goBack()">
